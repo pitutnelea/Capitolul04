@@ -11,7 +11,9 @@ int main()
     char *sirHeap = new char[sizeof(sirStack)];
 
     //3.Copiați conținutul șirului sirStack în șirul șirHeap.
-    sirHeap = sirStack;
+    for (int i = 0; i<sizeof(sirStack); i++){
+    sirHeap[i] = sirStack[i];
+    }
 
     //4.Afișați la consolă șirul sirHeap.
     cout<< "Sirul sirHeap este:"<<sirHeap << endl;

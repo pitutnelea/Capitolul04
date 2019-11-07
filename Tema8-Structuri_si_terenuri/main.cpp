@@ -16,6 +16,8 @@ Suprafata _suprafata;
 float _arie;
 };
 
+
+
 int main()
 {
     /*Definiți structura Suprafata care să conțină doi membri, _lung și _lat, de tip float
@@ -50,7 +52,20 @@ int main()
     cout<<"Suprafata lung = "<<oMovila->_suprafata._lung<<endl;
     cout<<"Suprafata lat = "<<oMovila->_suprafata._lat<<endl;
     cout<<"CNP Proprietar = "<<oMovila->_cnpProprietar<<endl;
-    cout<<"Tip teren = "<<oMovila->_tipTeren<<endl;
+    //cout<<"Tip teren = "<<oMovila->_tipTeren<<endl;
+
+    TipTeren i = viran;
+    //char *enum_to_string[i];
+    {
+        switch(i)
+        {
+            case agricol:cout<<"Tip teren = agricol"<<endl;break;
+            case pasune:cout<<"Tip teren = pasune"<<endl;break;
+            case livada:cout<<"Tip teren = livada"<<endl;break;
+            case viran:cout<<"Tip teren = viran"<<endl;break;
+            default: cout<<"Eroare: teren invalid"<<endl;
+        }
+    }
     cout<<"Arie = "<<oMovila->_arie<<endl;
 
     delete oMovila;

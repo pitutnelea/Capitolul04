@@ -2,7 +2,7 @@
 
 using namespace std;
 
-enum Tip {struguri, cirese, mere, visine, banane};
+enum Tip {struguri=1, cirese, mere, visine, banane};
 
 struct Produs{
     Tip tipProdus;
@@ -23,27 +23,35 @@ int main()
     //Odată încheiată citirea afișați situația stocului parcurgând din nou tabloul. De asemenea calculați și afișați valoarea totală a stocului. Găsiți un exemplu de afișaj în fișierul anexat.
 
     Produs unTablou[3];
-    short temp;
-
+    short varCitireTastatura, varTemp;
     for (int i=0; i<3;i++){
         cout<<"Introduceti tipul (1-struguri, 2-cirese, 3-mere, 4-visine, 5-banane): ";
-        cin>>temp;
-        cout<<""<<endl;
-        unTablou[i].tipProdus = static_cast<Tip>(temp);
+        cin>>varCitireTastatura;
+        varTemp = varCitireTastatura;
+        unTablou[i].tipProdus = static_cast<Tip>(varTemp);
 
         cout<<"Introduceti cantitatea: ";
         cin>>unTablou[i].cantitate;
-        cout<<""<<endl;
 
         cout<<"Introduceti pretul: ";
         cin>>unTablou[i].pret;
-        cout<<""<<endl;
     }
 
-    for (int j=0;j<1;j++){
-        cout<<"Produs"<<"\tCant"<<"\tPret"<<endl;
-        for (int i=0;i<3;i++){
-            cout<<unTablou[i].tipProdus<<"\t"<<unTablou[i].cantitate<<"\t"<<unTablou[i].pret<<endl;
+    for (int j=0;j<1;j++)
+    {
+        cout<<"Produs"<<"\t\tCant"<<"\tPret"<<endl;
+        for (int i=0;i<3;i++)
+        {
+            switch(unTablou[i].tipProdus)
+            {
+            case struguri: cout<<"Struguri";break;
+            case cirese: cout<<"Cirese"<<"\t";break;
+            case mere: cout<<"Mere"<<"\t";break;
+            case visine: cout<<"Visine"<<"\t";break;
+            case banane: cout<<"Banane"<<"\t";break;
+            default: cout<<"Atentie, produs invalid!"<<endl;
+            }
+            cout<<"\t"<<unTablou[i].cantitate<<"\t"<<unTablou[i].pret<<endl;
         }
     }
 

@@ -54,9 +54,8 @@ int main()
     cout<<"CNP Proprietar = "<<oMovila->_cnpProprietar<<endl;
     cout<<"Tip teren = "<<oMovila->_tipTeren;
 
-    TipTeren i = unTeren._tipTeren;
     {
-        switch(i)
+        switch(unTeren._tipTeren)
         {
             case agricol:cout<<", adica: agricol"<<endl;break;
             case pasune:cout<<", adica pasune"<<endl;break;

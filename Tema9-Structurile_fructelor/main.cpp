@@ -23,12 +23,11 @@ int main()
     //Odată încheiată citirea afișați situația stocului parcurgând din nou tabloul. De asemenea calculați și afișați valoarea totală a stocului. Găsiți un exemplu de afișaj în fișierul anexat.
 
     Produs unTablou[3];
-    short varCitireTastatura, varTemp;
+    short varCitireTastatura;
     for (int i=0; i<3;i++){
         cout<<"Introduceti tipul (1-struguri, 2-cirese, 3-mere, 4-visine, 5-banane): ";
         cin>>varCitireTastatura;
-        varTemp = varCitireTastatura;
-        unTablou[i].tipProdus = static_cast<Tip>(varTemp);
+        unTablou[i].tipProdus = static_cast<Tip>(varCitireTastatura);
 
         cout<<"Introduceti cantitatea: ";
         cin>>unTablou[i].cantitate;
@@ -59,8 +58,6 @@ int main()
     for (int i =0;i<3;i++){
         stoc = stoc + (unTablou[i].cantitate * unTablou[i].pret);
     }
-
     cout<< "Valoare stoc: "<< stoc<< endl;
-
     return 0;
 }
